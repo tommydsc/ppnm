@@ -4,6 +4,5 @@ Out.txt : hello.exe              # Out.txt depends on hello.exe
 hello.exe : hello.cs             # hello.exe depends on hello.cs
 	mcs hello.cs             # compile hello.cs into hello.exe
 
-.PHONEY:clean
 clean:                           # a phoney target, no dependencies
 	rm -f Out.txt hello.exe  # remove secondary files
