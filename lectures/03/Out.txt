@@ -1,0 +1,19 @@
+x>y
+a[i]=1
+a[i]=2
+a[i]=3
+a[i]=4
+a[i]=5
+ai=1
+ai=2
+ai=3
+ai=4
+ai=5
+A.s=hello
+a.s=hello
+B.s=hello
+b.s=hello
+A.s=new string
+a.s=hello
+x=1
+77777
