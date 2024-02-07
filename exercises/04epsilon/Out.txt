@@ -1,0 +1,12 @@
+Maximum representable integer is 2147483647, int.MaxValue=2147483647.
+Minimal representable integer is -2147483648, int.MinValue=-2147483648.
+Machine epsilon for double is 2.22044604925031E-16. Sytem.Math.Pow(2,-52)=2.22044604925031E-16. 
+Machine epsilon for float is 1.192093E-07. System.Math.Pow(2,-23)=1.19209289550781E-07.
+a==b? False
+a>1? False
+b>1? True
+Explanation: tiny=1.11022302462516E-16,1+tiny=1,tiny+tiny=2.22044604925031E-16.
+d1=7.9999999999999993e-001.
+d2=8.0000000000000004e-001.
+d1==d2? False.
+Comparison with approx function: d1==d2? True.
