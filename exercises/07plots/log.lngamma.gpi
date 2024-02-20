@@ -1,0 +1,14 @@
+\
+	set terminal svg background "white" ;\
+	set out "Out.lngamma.gnuplot.svg" ;\
+	set key left ;\
+	set xlabel "x" ;\
+	set ylabel "lngamma(x)" ;\
+	set mxtics 2 ;\
+	set grid ;\
+	set grid mxtics ;\
+	set title "Log of Gamma function" ;\
+	set yrange [-5:5];\
+	plot [-5:5]\
+		"Out.txt" u 1:4 with lines notitle \
+

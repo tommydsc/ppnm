@@ -1,0 +1,15 @@
+\
+	set terminal svg background "white" ;\
+	set out "Out.gamma.gnuplot.svg" ;\
+	set key left ;\
+	set xlabel "x" ;\
+	set ylabel "gamma(x)" ;\
+	set mxtics 2 ;\
+	set grid ;\
+	set grid mxtics ;\
+	set title "Gamma function" ;\
+	set yrange [-5:5];\
+	plot [-5:5]\
+		"Out.txt" u 1:3 with lines notitle \
+		,"gamma.data.txt" using 1:2 with points pointtype 6 notitle \
+
