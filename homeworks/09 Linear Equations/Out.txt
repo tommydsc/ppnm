@@ -1,0 +1,12 @@
+A is a 20x15-matrix with random entries between 0 and 1.
+Function decomp returns R and Q s.t.:
+	-R is a right-triangular matrix 
+	-Q is an orthogonal matrix
+	-A=QR.
+From now on A is a 20x20-matrix and b a 20-vector, both with random entries between 0 and 1.
+Function solve returns vector x s.t.:
+	Ax=b.
+Function det returns absolut value of determinant:
+	|det(A)|=0.162225906429191.
+Function inverse returns matrix B s.t.:
+	AB=1.
