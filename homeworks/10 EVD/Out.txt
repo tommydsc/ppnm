@@ -1,0 +1,6 @@
+A is a symmetric 100x100-matrix with random entries between 0 and 1.
+Function cyclic returns D and V s.t.:
+	-V^tAV=D
+	-VDV^t=A
+	-V^tV=1
+	-VV^t=1.
