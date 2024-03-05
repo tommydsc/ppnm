@@ -1,0 +1,3 @@
+Comparison Half-life-time in days
+Fit	Literature
+4.03	3.775
