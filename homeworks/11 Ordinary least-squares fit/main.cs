@@ -40,8 +40,12 @@ class main{
 		}
 		var fs = new Func<double,double>[] {z => 1.0, z => -z}; //logarithm of fitfunction
 		matrix c=lsfit(fs,x,y,dy);
-		Write($"{Exp(c[0,0])} \n{c[1,0]}\n");
+		Write($"#a={Exp(c[0,0])}, lambda={c[1,0]}\n");
 			
+		double d=0.05;
+		for(double z=x[0];z<=x[k-1];z+=d){
+			Write($"{z}	{c[0,0]-c[1,0]*z} \n");
+		}
 		
 		
 		/*test of lsfit with well-known function

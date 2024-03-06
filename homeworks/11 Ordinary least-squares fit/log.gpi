@@ -3,7 +3,7 @@
 	set out "Out.gnuplot.svg" ;\
 	set key left ;\
 	set xlabel "t" ;\
-	set ylabel "decay y(t)" ;\
+	set ylabel "logarithm of decay log(y(t))" ;\
 	set mxtics 2 ;\
 	set grid ;\
 	set grid mxtics ;\
@@ -11,5 +11,5 @@
 	f(x)=log(143.057705031799)-0.171852690707342*x;\
 	plot \
 		"input.txt" u 1:(log($2)):(($3)/($2)) w ye pointtype 2 notitle \
-		, f(x) \
+		,"Out.txt" u 1:2 with lines notitle \
 

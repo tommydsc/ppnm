@@ -1,4 +1,19 @@
-default: Out.gnuplot.svg Out.txt
+Out.gnuplot.svg: input.txt Out.txt Makefile
+	echo '\
+		set terminal svg background "white" ;\
+		set out "$@" ;\
+		set key left ;\
+		set xlabel "t" ;\
+		set ylabel "logarithm of decay log(y(t))" ;\
+		set mxtics 2 ;\
+		set grid ;\
+		set grid mxtics ;\
+		set title "radiocative decay" ;\
+		f(x)=log(143.057705031799)-0.171852690707342*x;\
+		plot \
+			"$<" u 1:(log($$2)):(($$3)/($$2)) w ye pointtype 2 notitle \
+			,"Out.txt" u 1:2 with lines notitle \
+	' | tee log.gpi  | gnuplot
 
 Out.txt: main.exe
 	mono main.exe $< <input.txt> $@ > Out.txt
@@ -15,22 +30,7 @@ funs.dll : funs.cs matrix.dll
 fit.dll: fit.cs matrix.dll funs.dll
 	mcs -target:library -out:fit.dll fit.cs -reference:matrix.dll,funs.dll
 
-Out.gnuplot.svg: input.txt Makefile
-	echo '\
-		set terminal svg background "white" ;\
-		set out "$@" ;\
-		set key left ;\
-		set xlabel "t" ;\
-		set ylabel "decay y(t)" ;\
-		set mxtics 2 ;\
-		set grid ;\
-		set grid mxtics ;\
-		set title "radiocative decay" ;\
-		f(x)=log(143.057705031799)-0.171852690707342*x;\
-		plot \
-			"$<" u 1:(log($$2)):(($$3)/($$2)) w ye pointtype 2 notitle \
-			, f(x) \
-	' | tee log.gpi  | gnuplot
+
 
 clean:
 	$(RM) *.exe *.dll Out* log*
